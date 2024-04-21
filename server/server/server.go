@@ -17,15 +17,6 @@ var upgrader = websocket.Upgrader{
 	WriteBufferSize: 1024,
 }
 
-/*
-	Document state : The true state of each document created.
-	Operation queue : All the pending operations that the server is yet to transform and acknowledge.
-	Client sessions : A list of all clients that are connected to the server, and the document they are
-					working on.
-	Client cursors : TBD
-	Conflict resolution metadata : TBD
-*/
-
 // TODO: figure out multiple documents, maybe using a DB
 var sharedDocument string //central copy of document stored on server
 
@@ -82,6 +73,7 @@ func (s *Server) HandleWebSocket(w http.ResponseWriter, r *http.Request) {
 			log.Printf("Error reading message from client %s: %s", currClient.Id, err)
 			break
 		}
+		fmt.Println(string(message))
 
 		op, err := parseOperation(message, clientId)
 		if err != nil {

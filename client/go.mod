@@ -2,9 +2,14 @@ module github.com/aaaaayushh/ot_editor/client
 
 go 1.21.1
 
+replace github.com/aaaaayushh/ot_editor/server => /Users/aayushrshah/GolandProjects/ot_editor/server/
+
 require (
+	github.com/aaaaayushh/ot_editor/server v0.0.0-00010101000000-000000000000
 	github.com/charmbracelet/bubbles v0.18.0
 	github.com/charmbracelet/bubbletea v0.25.0
+	github.com/gorilla/websocket v1.5.1
+	github.com/sergi/go-diff v1.3.1
 )
 
 require (
@@ -21,6 +26,7 @@ require (
 	github.com/muesli/reflow v0.3.0 // indirect
 	github.com/muesli/termenv v0.15.2 // indirect
 	github.com/rivo/uniseg v0.4.6 // indirect
+	golang.org/x/net v0.17.0 // indirect
 	golang.org/x/sync v0.1.0 // indirect
 	golang.org/x/sys v0.13.0 // indirect
 	golang.org/x/term v0.13.0 // indirect
